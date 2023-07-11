@@ -147,7 +147,7 @@ body{
 }
 
 .about .row .img-about img {
-   
+   width :100%;
 }
 
 .about .row .img-about .content  {
@@ -158,4 +158,8 @@ body{
 .about .row .img-about h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+}
+
+.about .row .img-about p {
+    margin-top: 3rem;
 }
