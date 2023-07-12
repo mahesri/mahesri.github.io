@@ -212,6 +212,7 @@ body{
     flex-wrap:inherit;
     margin-top: 3rem;
     justify-content: center;
+    margin-bottom: 3rem;
 }
 
 .menu-card {
@@ -223,9 +224,67 @@ body{
 .menu-card img {
     border-radius: 5%;
     width: 80%;
+   
 }
 
 .judul-menu {
     margin: 1.5rem auto 0.5rem;
+}
+
+/* Contact Section */
+
+.contact h2 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.contact {
+    padding: 6rem 7% 1.4rem;
+}
+
+.contact p {
+    max-width: 30rem;
+    text-align: center;
+    margin: auto;
+    font-weight: 100;
+    line-height: 1.6rem;
+}
+
+.contact-space img {
+     border-radius: 5%;
+     width: 10%;
+}
+
+
+.row-contact {
+    display: flex;
+    flex-wrap:wrap;
+    margin-top: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    background-color: var(--primary);
+}
+
+.map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .rom form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem ;
+    text-align: center;
+}
+
+.contact .row-contact form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--bg);
+    border: 1px solid #eee;
+    padding-left: 2rem;
 }
 
