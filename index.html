@@ -19,12 +19,20 @@
     <!-- Ini Navbar -->
     
     <div class="navbar">
+
+        <img src="" alt="">
         
         <div class="navbar-nav">
             <a href="#home">Home</a>
             <a href="#daftar-harga">Service</a>
             <a href="#about">About me</a>
             <a href="#contact">Contact</a>
+        </div>
+
+        <div class="navbar-extra">
+            <div id="hamburger-menu" >
+                <a href="#navbar-nav" ><i data-feather="menu"></i></a>
+            </div>
         </div>
 
     </div>
@@ -175,7 +183,25 @@
 
 
 <script>
-    feather.replace()
+feather.replace()
+
+const navbarNav = document.querySelector('.navbar .navbar-nav');
+
+// ketika hambuerger menu diklik 
+
+document.querySelector('#hamburger-menu').onclick = () => {
+navbarNav.classList.toggle('active');   
+}
+
+//klik diluar sidebar untuk menghilangkan navbar
+
+const hambuerger = document.querySelector('#hamburger-menu');
+
+document.addEventListener('click', function(e){
+    if(!hambuerger.contains(e.target) && !navbarNav.contains(e.target)){
+        navbarNav.classList.remove('active');
+    }
+});
   </script>
 </body>
 </html>
