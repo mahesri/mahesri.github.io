@@ -440,8 +440,9 @@ footer .credit {
 .hero .content .cta:hover {
     margin-top : 2rem;
     display: inline-block;
-    padding: 1rem 3rem;
-    font-size: 1.4rem;
+    margin-left: 90px;
+    padding: 3rem 3rem;
+    font-size: 3.4rem;
     color: #fff;
     background-color: var(--primary);
     border-radius: 0.5rem;
