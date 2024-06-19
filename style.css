@@ -55,9 +55,7 @@ body{
 }
 
 .navbar .navbar-nav a:hover::after {
-
     transform: scaleX(0.5);
-
 }
 
 #hamburger-menu{
@@ -375,7 +373,6 @@ footer .credit {
 
 /* Navbar done */
 
-
 .hero {
     min-height: 100vh;
     display: flex;
@@ -427,7 +424,7 @@ footer .credit {
     margin-top : 4rem;
     display: inline-block;
     margin:0 50px 0 50px ;
-    padding: 3rem 3rem;
+    padding: 2rem 2rem;
     font-size: 3.4rem;
     color: #fff;
     background-color: rgb(148, 148, 255);
@@ -439,7 +436,7 @@ footer .credit {
     margin-top : 4rem;
     display: inline-block;
     margin:0 50px 0 50px ;
-    padding: 3rem 3rem;
+    padding: 2rem 2rem;
     font-size: 3.4rem;
     color: #fff;
     background-color: rgb(148, 148, 255);
@@ -473,15 +470,12 @@ footer .credit {
     padding: 0 1rem;
 }
 
-.about .row .img-about h3 {
-    font-size: 1.8rem;
+.about .row h3 {
+    font-size: 3.8rem;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
 }
 
-.about .row .img-about  {
-    
-}
 
 .about .row .content {
     margin-top: 1.5rem;
@@ -490,8 +484,77 @@ footer .credit {
 .about .row .content p{
     font-weight: 200;
     margin-top: 0.8rem;
-    line-height: 4rem;
-    font-size: 3rem;
+    line-height: 3rem;
+    font-size: 2.5rem;
 }
 
+/* Daftar Harga */
+
+
+.daftar-harga h2 {
+    font-size: 5.6rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.daftar-harga p {
+    text-align: center;
+    /* margin: auto; */
+    font-weight: 100;
+    line-height: 3rem;
+    font-size: 2.5rem;
+}
+
+.daftar-harga .row {
+    display: grid;
+    flex-wrap:inherit;
+    margin-top: 3rem;
+    justify-content: center;
+    margin: 3rem 3rem;
+}
+
+.menu-card {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.menu-card img {
+    border-radius: 5%;   
+}
+
+.menu-card .judul-menu {
+    font-size: 2.7rem;
+}
+
+/* Contact  */
+
+.contact h2{
+    font-size: 5.6rem;
+}
+
+.contact p {
+    font-size: 2.5rem;
+    line-height: 3rem;    
+}
+
+.contact .row-contact {
+    display: grid;
+}
+
+.contact .row-contact button {
+  min-width: 80vw;
+  height: 50px;
+  font-size: 3rem !important;
+}
+
+/* Footer */
+
+footer .links a{
+    font-size: large;
+}
+
+footer .credit {
+    font-size: large;
+}
 }
