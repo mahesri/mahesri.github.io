@@ -1,87 +1,560 @@
+:root{
+    --primary :#333;
+    --bg :#010101;
+}
+
 *{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border:none;
 }
 
 body{
-    /* background-color: var(--background); */
-    color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg);
+    color: #fff;
+   
+}
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 150vh;
-    transition: background-color 0.3s, color 0.3s;
-    max-width: 100%;
-    overflow: hidden;
-    flex-direction: column;
+    padding: 1.4rem 7%;
+    background-color:rgba(1, 1, 3, 0.5);
+    border-bottom:1px solid var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 
 }
 
-@media (prefers-color-scheme: dark) {
-        :root {
-        --primary-color: #bb86fc; /* Warna utama lebih cerah di mode gelap */
-        --background: #333333; /* Latar belakang gelap */
-        --text-color: #ffffff; /* Teks di mode gelap */
-        }
-        }
+.navbar .navbar-nav a {
+    color:#fff;
+    text-decoration: none;
+    display: inline-flex;
+    font-size: 1.4rem;
+    margin: 0 1rem;
+}
 
-h1 {
+.navbar .navbar-nav a:hover{
+    color : rgb(148, 148, 255);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgb(148, 148, 255);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+#hamburger-menu{
+    display: none;
+}
+
+
+/* Ini Bagian konten */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('Assets/gambar-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after{
+    content :'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(1, 1, 3, 1) 8%, rgba(255, 255, 255, 0) 35%) ;
+}
+
+.hero .content {
+    padding: 1.4rem;
+    max-width: 60rem;
+    
+}
+
+.hero .content h1 {
+    font-size: 3.5em;
+    color :#fff;
+    text-shadow: 1px 1px rgba(1, 1, 1, 0.5);
+    line-height: 1.2;
+}
+
+.hero .content p {
+   font-weight: 100;
+    margin-top: 0.8rem;
+    line-height: 2rem;
+    max-width: 40rem;
+    font-size: 1.9rem;
+    text-shadow: 1px 1px rgba(1, 1, 1,  text-shadow: 1px 1px rgba(1, 1, 1, 0.5));
+}
+
+.hero .content .cta {
+    margin-top : 2rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: rgb(148, 148, 255);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1px 1px 3px rgba(1,1,3,0.5));
+}
+.hero .content .cta:hover {
+    margin-top : 2rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1px 1px 3px rgba(1,1,3,0.5));
+}
+    
+
+.about,
+.daftar-harga {
+    padding: 6rem 7% 1.4rem;
+    min-height: 100vh;
+}
+
+.about h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2.6rem;
+}
+
+.about .row {
+    display: flex;
+}
+
+.about .row .img-about {
+
+    flex: 1 1 45rem;
+
+}
+
+.about .row .img-about img {
+   width :100%;
+}
+
+.about .row .img-about .content  {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row .img-about h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.about .row .img-about  {
+    
+}
+
+.about .row .content {
+    margin-top: 1.5rem;
+}
+
+.about .row .content p{
+    font-weight: 100;
+    margin-top: 0.8rem;
+    line-height: 2rem;
+    max-width: 40rem;
+    font-size: 1rem;
+}
+
+/* Menu */
+
+.daftar-harga h2 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
     text-align: center;
 }
 
-.container {
-    padding: 20px;
-    border-radius: 10px;
-    margin: 0 20px;
-    width: 750px;
-    background-image: linear-gradient(217deg, rgba(255, 0, 234, 0.8), rgba(255,0,0,0) 70.71%),         
-                      linear-gradient(127deg, rgba(122, 255, 122, 0.8), rgba(0,255,0,0) 70.71%),            
-                      linear-gradient(336deg, rgba(255, 119, 232, 0.8), rgba(0,0,255,0) 70.71%);;
-
-}
-
-label {
-    font-size: large;
-    font-weight: 500;
-    margin-right: 9px;
-}
-
-input {
-border: none;
-padding: 10px;
-font-size: 10px;
-outline: none;
-border-radius: 10px;
-}
-
-btns {
-    width: 90%;
+.daftar-harga p {
+    max-width: 30rem;
+    text-align: center;
     margin: auto;
+    font-weight: 100;
+    line-height: 1.6rem;
+
+}
+
+.daftar-harga .row {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin-top: 30px;
+    flex-wrap:inherit;
+    margin-top: 3rem;
+    justify-content: center;
+    margin-bottom: 3rem;
 }
 
-button{ 
-    width :30%;
-    padding: 10px;
-    font-size: medium;
-    font-weight: bold;
+.menu-card {
+
+    text-align: center;
 
 }
 
-span {
-    font-weight: bold;
-    padding-right: 5px;
+.menu-card img {
+    border-radius: 5%;
+    width: 80%;
+   
 }
 
-ul {
+.judul-menu {
+    margin: 1.5rem auto 0.5rem;
+}
+
+/* Contact Section */
+
+.contact h2 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.contact {
+    padding: 3rem 7% 1.4rem;
+}
+
+.contact p {
+    max-width: 30rem;
+    text-align: center;
+    margin: auto;
+    font-weight: 100;
+    line-height: 1.6rem;
+}
+
+.contact-space img {
+     border-radius: 5%;
+     width: 10%;
+}
+
+
+.contact .row-contact {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    background-color: var(--primary);
+   }
+
+.contact .row-contact .map {
+    flex: 1 1 30rem;
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+.contact .row-contact form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem ;
+    text-align: center;
+    width: 100%;
+}
+
+.contact .row-contact form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--bg);
+    border: 1px solid #eee;
+    padding-left: 2rem;
+}
+
+.contact .row-contact form .input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+    color: #fff;
+}
+
+.contact .row-contact form .btn {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+   background-color: rgb(148, 148, 255);
+
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+}
+
+
+.socials {
+padding: 1rem 0;
+}
+
+footer .socials a {
+    color: #fff;
+    margin: 1rem;
+}
+
+footer .socials a:hover{
+    color: var(--bg);
+}
+
+footer .links a {
+    color: #fff;
+    padding: 0.7rem 1rem;
+    margin: ;
+}
+
+footer .links {
+    margin-bottom: 1.4rem;
+}
+
+footer .links a:hover {
+    color: var(--bg);
+}
+
+footer .credit {
+    font-size: ;
+}
+
+@media screen and (max-width :450px) {
+    
+    html {
+        font-size: 50%;
+    }
+    
+    #hamburger-menu {
+        display: inline-block;
+    }
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: rgba(1, 1, 3, 0.8);
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active{
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+/* Navbar done */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('Assets/mahesri.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after{
+    content :'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(1, 1, 3, 1) 8%, rgba(255, 255, 255, 0) 35%) ;
+}
+
+.hero .content {
+    padding: 2.4rem;
+    max-width: 100rem;
+    
+}
+
+.hero .content h1 {
+    display: none;
+    font-size: 5.5em;
+    color :#fff;
+    text-shadow: 1px 1px rgba(1, 1, 1, 0.5);
+    line-height: 1.2;
+    text-align: center;
+    padding: 0, 20px, 0, 20px;
+}
+
+.hero .content p {
+    padding: 0 50px 0 50px;
+    text-align: center;
+    font-weight: 100;
+    margin: 3.8rem;
+    line-height: 4rem;
+    font-size: 2.9rem;
+    text-shadow: 1px 1px rgba(1, 1, 1,  text-shadow: 1px 1px rgba(1, 1, 1, 0.5));
+}
+
+.hero .content .cta {
+    margin-top : 4rem;
+    display: inline-block;
+    margin:0 50px 0 50px ;
+    padding: 2rem 2rem;
+    font-size: 3.4rem;
+    color: #fff;
+    background-color: rgb(148, 148, 255);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px rgba(1px 1px 3px rgba(1,1,3,0.5));
+}
+.hero .content .cta:hover {
+
+    margin-top : 4rem;
+    display: inline-block;
+    margin:0 50px 0 50px ;
+    padding: 2rem 2rem;
+    font-size: 3.4rem;
+    color: #fff;
+    background-color: rgb(148, 148, 255);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 3px rgba(1px 1px 3px rgba(1,1,3,0.5));
+   
+}
+
+/* About me Section */
+
+.about h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 5.6rem;
+}
+
+.about .row {
+    display: grid;
+}
+
+.about .row .img-about {
+    flex: 1 1 45rem;
+}
+
+.about .row .img-about img {
+   width :100%;
+}
+
+.about .row .img-about .content  {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row h3 {
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+
+.about .row .content {
+    margin-top: 1.5rem;
+}
+
+.about .row .content p{
+    font-weight: 200;
+    margin-top: 0.8rem;
+    line-height: 3rem;
+    font-size: 2.5rem;
+}
+
+/* Daftar Harga */
+
+
+.daftar-harga h2 {
+    font-size: 5.6rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.daftar-harga p {
+    text-align: center;
+    /* margin: auto; */
+    font-weight: 100;
+    line-height: 3rem;
+    font-size: 2.5rem;
+}
+
+.daftar-harga .row {
+    display: grid;
+    flex-wrap:inherit;
+    margin-top: 3rem;
+    justify-content: center;
+    margin: 3rem 3rem;
+}
+
+.menu-card {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.menu-card img {
+    border-radius: 5%;   
+}
+
+.menu-card .judul-menu {
+    font-size: 2.7rem;
+}
+
+/* Contact  */
+
+.contact h2{
+    font-size: 5.6rem;
+}
+
+.contact p {
+    font-size: 2.5rem;
+    line-height: 3rem;    
+}
+
+.contact .row-contact {
+    display: grid;
+}
+
+.contact .row-contact button {
+  min-width: 80vw;
+  height: 50px;
+  font-size: 3rem !important;
+}
+
+/* Footer */
+
+footer .links a{
     font-size: large;
 }
 
-li {
-    color :rgb(255, 235, 164);
+footer .credit {
+    font-size: large;
+}
 }
