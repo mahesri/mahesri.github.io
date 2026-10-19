@@ -1,200 +1,340 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riyadi</title>
-    
-  <script src="https://unpkg.com/feather-icons"></script>
 
-    <link href="style.css" rel="stylesheet">
+    <meta
+        name="description"
+        content="Riyadi's portfolio: social media, creative content, copywriting, and web development."
+    >
 
-     <!-- Feather -->
-     <script src="https://unpkg.com/feather-icons"></script>
-     <!-- Feather -->
-   
+    <title>Riyadi | Personal Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Feather Icons -->
+    <script
+        src="https://unpkg.com/feather-icons"
+        defer
+    ></script>
+
+    <!-- Main JavaScript -->
+    <script src="script.js" defer></script>
 </head>
+
 <body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="#home" class="logo" aria-label="Riyadi Home">
+            Riyadi<span>.</span>
+        </a>
 
-    <!-- Ini Navbar -->
-    
-    <div class="navbar">
+        <nav class="navbar-nav" id="navbar-nav" aria-label="Main navigation">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About Me</a>
+            <a href="#daftar-harga" class="nav-link">Services</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
 
-        <img src="" alt="">
-        
-        <div class="navbar-nav">
-            <a href="#home">Home</a>
-            <a href="#about">About me</a>
-            <a href="#daftar-harga">Service</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <button
+            class="menu-toggle"
+            id="hamburger-menu"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="navbar-nav"
+            aria-expanded="false"
+        >
+            <i data-feather="menu" aria-hidden="true"></i>
+        </button>
+    </header>
 
-        <div class="navbar-extra">
-            <div id="hamburger-menu" >
-                <a href="#navbar-nav" ><i data-feather="menu"></i></a>
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <p class="eyebrow">CREATIVE THINKER & DIGITAL CREATOR</p>
+
+                <h1>
+                    Imagine It.<br>
+                    <span>Let's Make It Happen.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Hello, I'm Riyadi. I combine creativity, digital
+                    communication, and technology to turn ideas into reality.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#daftar-harga" class="btn btn-primary">
+                        Explore My Services
+                        <i data-feather="arrow-up-right" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="#about" class="btn btn-outline">
+                        More About Me
+                    </a>
+                </div>
             </div>
-        </div>
 
-    </div>
-    
-    <!-- Navbar Done -->
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to About Me">
+                <i data-feather="arrow-down" aria-hidden="true"></i>
+            </a>
+        </section>
 
-    <!-- Hero Section -->
+        <!-- About -->
+        <section class="section about" id="about">
+            <div class="section-heading">
+                <p class="eyebrow">GET TO KNOW ME</p>
+                <h2>About Me<span>.</span></h2>
+            </div>
 
-   <section class="hero" id="home">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img
+                        src="Assets/img-about.png"
+                        alt="Riyadi's profile"
+                        loading="lazy"
+                    >
+                </div>
 
-    <main class="content">
+                <div class="about-content">
+                    <h3>Creativity Meets Technology</h3>
 
-        <h1>Imagine, We Know What We Need To Do</h1>
-        <p>Hello. This is Riyadi, wellcome to my page!</p>
-        <a href="#daftar-harga" class="cta">Here to find me</a>
-    </main>
+                    <p>
+                        My name is Riyadi. I am a social media specialist
+                        with three years of experience. My work in the
+                        creative industry has also helped me develop skills
+                        in copywriting, digital content, and communication.
+                    </p>
 
-   </section>
-    
-    <!-- Hero Section end -->
+                    <p>
+                        I am also completing my bachelor's degree in
+                        Informatics Engineering. My interest in technology
+                        began in 2019, when I started exploring how to build
+                        web-based systems.
+                    </p>
 
-<!-- About section -->
-    
- <section id="about" class="about"> 
-    <h2>About me</h2>
-    <div class="row">
-       <div class="img-about">
-           <img src="Assets/img-about.png" alt="Tentang Kami">
-       </div>
-       <div class="content">
-           <h3>What I really offer?</h3>
-          <p>My name is Riyadi. I am a social media specialist, with 3 years experience. With dedication and long hours 
-            in the creative industry, this indirectly led me to be involved in the world of copy writing, which is all stated here.</p>
-          </br>
-          </br>
-           <p>I'm currently finishing my bachelor's degree. My current major is informatics engineering, which is
-            a deepening of my hobby in building web-based systems which started in 2019.</p>
-   
-       </div>
-    </div>
- </section>
+                    <p>
+                        I enjoy combining creative ideas with technical
+                        solutions to create meaningful digital experiences.
+                    </p>
 
- 
+                    <a href="#contact" class="text-link">
+                        Let's connect
+                        <i data-feather="arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
 
+        <!-- Services -->
+        <section class="section services" id="daftar-harga">
+            <div class="section-heading">
+                <p class="eyebrow">WHAT I CAN DO</p>
+                <h2>My Services<span>.</span></h2>
 
-<!-- About section -->
+                <p class="section-description">
+                    Creative services designed to bring your ideas to life.
+                </p>
+            </div>
 
-<!-- Paket Harga section -->
-
-<section id="daftar-harga" class="daftar-harga">
-
-    <h2>Service</h2>
-
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In vitae deleniti maxime, laudantium ex exercitationem?</p>
-
-    <div class="row">
-        <div class="menu-card">
-            <img src="Assets/gambar-pantai.jpg" alt="Paket-wisata" class="men-card-img">
-            <h3 class="judul-menu"> Paket Wisata</h3>
-            <p class="menu-card-harga">IDR 12.000.000</p>
-        </div>
-        <div class="menu-card">
-            <img src="Assets/foto-prewed.jpg" alt="Paket-wisata" class="men-card-img">
-            <h3 class="judul-menu"> Paket Foto Preweding</h3>
-            <p class="menu-card-harga">IDR 8.000.000</p>
-        </div>
-        <div class="menu-card">
-            <img src="Assets/foto-model.jpg" alt="Paket-wisata" class="men-card-img">
-            <h3 class="judul-menu"> Paket Foto Model</h3>
-            <p class="menu-card-harga">IDR 8.000.000</p>
-        </div>
-        <div class="menu-card">
-            <img src="Assets/foto-produk.jpg" alt="Paket-wisata" class="men-card-img">
-            <h3 class="judul-menu"> Paket Foto Produk</h3>
-            <p class="menu-card-harga">IDR 5.000.000</p>
-        </div>
-    </div>
-    
-</section>
-
-<!-- Paket Harga section -->
-
-<!-- Section Kontak  -->
-
-<section id="contact" class="contact">
-            <h2>Contact</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, deserunt molestias! Nisi ipsam facilis nesciunt!</p>
-            <div class="row-contact">
-                
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63245.
-                9837195514!2d110.33364472946258!3d-7.803163418425669!2m3!1f0!2f0!3f0!3m2!
-                1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b6bc5%3A0x21723fd4d3684f71!2s
-                Yogyakarta%2C%20Yogyakarta%20City%2C%20Special%20Region%20of%20Yogyakarta
-                !5e0!3m2!1sen!2sid!4v1689156751447!5m2!1sen!2sid" allowfullscreen=""\
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
-
-                <form action="">
-                    <div class="input-group">
-                        <i data-feather="user"></i>
-                        <input type="text" placeholder="Name">
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-image">
+                        <img
+                            src="Assets/gambar-pantai.jpg"
+                            alt="Outdoor travel photography"
+                            loading="lazy"
+                        >
                     </div>
-                    <div class="input-group">
-                        <i data-feather="mail"></i>
-                        <input type="text" placeholder="Email">
+
+                    <div class="service-content">
+                        <span class="service-number">01</span>
+                        <h3>Travel Photography</h3>
+                        <p>Capture memorable moments and beautiful destinations.</p>
+                        <p class="service-price">IDR 12.000.000</p>
                     </div>
-                    <div class="input-group">
-                        <i data-feather="phone"></i>
-                        <input type="text" placeholder="Phone">
+                </article>
+
+                <article class="service-card">
+                    <div class="service-image">
+                        <img
+                            src="Assets/foto-prewed.jpg"
+                            alt="Prewedding photography"
+                            loading="lazy"
+                        >
                     </div>
-                    <button type="submit" class="btn">Submit</button>
+
+                    <div class="service-content">
+                        <span class="service-number">02</span>
+                        <h3>Prewedding Photography</h3>
+                        <p>Tell your love story through meaningful photographs.</p>
+                        <p class="service-price">IDR 8.000.000</p>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-image">
+                        <img
+                            src="Assets/foto-model.jpg"
+                            alt="Model photography"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="service-content">
+                        <span class="service-number">03</span>
+                        <h3>Model Photography</h3>
+                        <p>Create portraits with style, character, and detail.</p>
+                        <p class="service-price">IDR 8.000.000</p>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-image">
+                        <img
+                            src="Assets/foto-produk.jpg"
+                            alt="Product photography"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="service-content">
+                        <span class="service-number">04</span>
+                        <h3>Product Photography</h3>
+                        <p>Present your products with clear and attractive visuals.</p>
+                        <p class="service-price">IDR 5.000.000</p>
+                    </div>
+                </article>
+            </div>
+
+            <p class="pricing-note">
+                Prices are starting references. Contact me for details
+                and a customized offer.
+            </p>
+        </section>
+
+        <!-- Contact -->
+        <section class="section contact" id="contact">
+            <div class="section-heading">
+                <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+                <h2>Let's Talk<span>.</span></h2>
+
+                <p class="section-description">
+                    Have an idea or project? I'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's create something meaningful.</h3>
+
+                    <p>
+                        Tell me about your idea, project, or collaboration.
+                        We can discuss how to bring it to life.
+                    </p>
+
+                    <div class="contact-detail">
+                        <i data-feather="map-pin" aria-hidden="true"></i>
+                        <span>Yogyakarta, Indonesia</span>
+                    </div>
+
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://maps.google.com/maps?q=Yogyakarta%2C%20Indonesia&output=embed"
+                            title="Map of Yogyakarta, Indonesia"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Tell me about your project"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        Send a Message
+                        <i data-feather="arrow-up-right" aria-hidden="true"></i>
+                    </button>
+
+                    <p class="form-status" id="form-status" role="status"></p>
                 </form>
             </div>
-</section>
+        </section>
+    </main>
 
-<!-- Section Kontak Done -->
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="#home" class="logo">Riyadi<span>.</span></a>
 
-<!-- Ini Footer -->
+        <p>Creative ideas. Thoughtful solutions. Meaningful experiences.</p>
 
-<footer>
-    <div class="socials">
-        <a href="#"><i data-feather="instagram"></i></a>
-        <a href="#"><i data-feather="facebook"></i></a>
-        <a href="#"><i data-feather="twitter"></i></a>
-    </div>
-    <div class="links">
-        <a href="#home">Home</a>
-        <a href="#about">About me</a>
-        <a href="#daftar-harga">Service</a>
-        <a href="#contact">Contact</a>
-    </div>
+        <div class="footer-socials">
+            <!-- Replace # with your actual profile URLs -->
+            <a href="#" aria-label="Instagram">
+                <i data-feather="instagram" aria-hidden="true"></i>
+            </a>
 
-    <div class="credit">
-        <p>Homemade singgle page by Riyadi | &copy; 2023</p>
-    </div>
-</footer>
-    
+            <a href="#" aria-label="Facebook">
+                <i data-feather="facebook" aria-hidden="true"></i>
+            </a>
 
-<!-- Footer Done -->
+            <a href="#" aria-label="Twitter">
+                <i data-feather="twitter" aria-hidden="true"></i>
+            </a>
+        </div>
 
-<!-- Father Script -->
-
-
-<script>
-feather.replace()
-
-const navbarNav = document.querySelector('.navbar .navbar-nav');
-
-// ketika hambuerger menu diklik 
-
-document.querySelector('#hamburger-menu').onclick = () => {
-navbarNav.classList.toggle('active');   
-}
-
-//klik diluar sidebar untuk menghilangkan navbar
-
-const hambuerger = document.querySelector('#hamburger-menu');
-
-document.addEventListener('click', function(e){
-    if(!hambuerger.contains(e.target) && !navbarNav.contains(e.target)){
-        navbarNav.classList.remove('active');
-    }
-});
-  </script>
+        <p class="footer-credit">
+            &copy; <span id="current-year">2026</span> Riyadi. All rights reserved.
+        </p>
+    </footer>
 </body>
 </html>
