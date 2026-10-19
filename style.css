@@ -895,3 +895,20 @@ textarea:focus-visible {
     aspect-ratio: auto;
     object-fit: contain;
 }
+/* Stronger hero gradient and clear built-in menu icon */
+.menu-toggle svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.hero-overlay {
+    background:
+        linear-gradient(115deg, rgba(148, 148, 255, 0.22) 0%, transparent 62%),
+        linear-gradient(90deg, rgba(8, 8, 13, 0.98) 0%, rgba(8, 8, 13, 0.86) 52%, rgba(8, 8, 13, 0.48) 100%),
+        linear-gradient(0deg, var(--bg) 0%, rgba(11, 11, 15, 0.78) 58%, transparent 100%);
+}
