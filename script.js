@@ -12,6 +12,9 @@
             "aria-label",
             isOpen ? "Close navigation menu" : "Open navigation menu"
         );
+        menuToggle.innerHTML = isOpen
+            ? '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"></path></svg>'
+            : '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>';
 
         if (!isOpen && returnFocus) menuToggle.focus();
     };
@@ -43,7 +46,7 @@
         }
     });
 
-    const desktopViewport = window.matchMedia("(min-width: 761px)");
+    const desktopViewport = window.matchMedia("(min-width: 1025px)");
     const closeOnDesktop = (event) => {
         if (event.matches) setMenuOpen(false);
     };
@@ -53,4 +56,6 @@
     } else {
         desktopViewport.addListener(closeOnDesktop);
     }
+
+    setMenuOpen(false);
 })();
