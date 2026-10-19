@@ -373,11 +373,7 @@ textarea:focus-visible {
     background: var(--surface);
 }
 
-.about-image img {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-}
+.about-image img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
 
 .about-content h3 {
     margin-bottom: 1.2rem;
@@ -803,7 +799,7 @@ textarea:focus-visible {
     }
 
     .about-image img {
-        aspect-ratio: 5 / 4;
+        aspect-ratio: auto;
         object-position: center;
     }
 
@@ -890,4 +886,12 @@ textarea:focus-visible {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
+}
+
+
+/* Keep the About graphic fully visible */
+.about-image img {
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
 }
