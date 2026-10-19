@@ -938,3 +938,7 @@ textarea:focus-visible {
 .menu-toggle[aria-expanded="true"]::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
+.menu-toggle::before,
+.menu-toggle::after {
+    top: 50%;
+}
