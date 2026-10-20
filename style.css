@@ -1369,3 +1369,12 @@ body {
     overflow: hidden;
   }
 }
+
+
+/* Let the mobile drawer use the full viewport instead of the blurred header box. */
+@media (max-width: 760px) {
+  .navbar {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
