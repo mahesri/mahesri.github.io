@@ -91,7 +91,10 @@
             contactForm.reset();
         } catch (error) {
             console.error("EmailJS contact form error:", error);
-            formStatus.textContent = "Sorry, your message could not be sent. Please try again in a moment.";
+            const detail = error?.text || error?.message;
+            formStatus.textContent = detail
+                ? `Message not sent: ${detail}`
+                : "Sorry, your message could not be sent. Please try again in a moment.";
         } finally {
             if (submitButton) {
                 submitButton.disabled = false;
