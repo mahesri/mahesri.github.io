@@ -85,7 +85,7 @@
                 "service_r7tfi5c",
                 "template_sj5t82m",
                 contactForm,
-                { publicKey: "3duX9L_cdusJoINFc" }
+                { publicKey: "3duX9L_cdusJolNFc" }
             );
             formStatus.textContent = "Thanks! Your message was sent. I’ll get back to you soon.";
             contactForm.reset();
@@ -93,7 +93,7 @@
             console.error("EmailJS contact form error:", error);
             const detail = error?.text || error?.message;
             formStatus.textContent = detail
-                ? `Message not sent: ${detail}`
+                ? "Message not sent: " + detail
                 : "Sorry, your message could not be sent. Please try again in a moment.";
         } finally {
             if (submitButton) {
