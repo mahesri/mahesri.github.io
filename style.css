@@ -186,7 +186,7 @@ textarea:focus-visible {
     min-height: 100svh;
     padding: calc(var(--nav-height) + 70px) 7% 100px;
 
-    background-image: url("Assets/gambar-bg.jpg");
+    background-image: url("Assets/hero_background.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
