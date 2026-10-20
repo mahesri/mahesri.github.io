@@ -59,3 +59,44 @@
 
     setMenuOpen(false);
 })();
+(() => {
+    const contactForm = document.getElementById("contact-form");
+    const formStatus = document.getElementById("form-status");
+    if (!contactForm || !formStatus) return;
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const senderName = contactForm.elements.namedItem("name");
+    const titleField = contactForm.elements.namedItem("title");
+    contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!window.emailjs) {
+            formStatus.textContent = "The email service is unavailable right now. Please try again later.";
+            return;
+        }
+        if (titleField && senderName) {
+            titleField.value = senderName.value.trim();
+        }
+        formStatus.textContent = "Sending your message…";
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.setAttribute("aria-busy", "true");
+        }
+        try {
+            await window.emailjs.sendForm(
+                "service_r7tfi5c",
+                "template_sj5t82m",
+                contactForm,
+                { publicKey: "3duX9L_cdusJoINFc" }
+            );
+            formStatus.textContent = "Thanks! Your message was sent. I’ll get back to you soon.";
+            contactForm.reset();
+        } catch (error) {
+            console.error("EmailJS contact form error:", error);
+            formStatus.textContent = "Sorry, your message could not be sent. Please try again in a moment.";
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.removeAttribute("aria-busy");
+            }
+        }
+    });
+})();
