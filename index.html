@@ -11,7 +11,7 @@
 
     <title>Ready me by Riyadi.dev</title>
 
-    <link rel="stylesheet" href="style.css?v=adaptive-theme-20261026-1">
+    <link rel="stylesheet" href="style.css?v=projects-20261105-1">
 
     <!-- Feather Icons -->
     <script
@@ -24,7 +24,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js" defer></script>
 
     <!-- Main JavaScript -->
-    <script src="script.js?v=contact-form-20261020-2" defer></script>
+    <script src="script.js?v=projects-20261105-1" defer></script>
 </head>
 
 <body>
@@ -301,13 +301,34 @@
                         <span>Yogyakarta, Indonesia</span>
                     </div>
 
-                    <div class="map-wrapper">
-                        <iframe
-                            src="https://maps.google.com/maps?q=Yogyakarta%2C%20Indonesia&output=embed"
-                            title="Map of Yogyakarta, Indonesia"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
+                    <div class="project-slideshow" id="project-slideshow" aria-label="Selected project work">
+                        <div class="project-slide is-active" aria-hidden="false">
+                            <img src="Assets/web_development.webp" alt="Website portfolio project preview" loading="lazy">
+                            <div class="project-caption"><span>01 · WEB DEVELOPMENT</span><h4>Portfolio Website</h4><p>A responsive website to present a profile, services, and contact form.</p></div>
+                        </div>
+                        <div class="project-slide" aria-hidden="true" hidden>
+                            <img src="Assets/photo_video_production.webp" alt="Video production and content creation" loading="lazy">
+                            <div class="project-caption"><span>02 · VIDEOGRAPHY</span><h4>Video & Content</h4><p>Video storytelling for personal profiles, products, and social media.</p></div>
+                        </div>
+                        <div class="project-slide" aria-hidden="true" hidden>
+                            <img src="Assets/social_media_specialist.webp" alt="Social media content and campaign visuals" loading="lazy">
+                            <div class="project-caption"><span>03 · SOCIAL MEDIA</span><h4>Social Content</h4><p>Creative content and account support for Instagram, TikTok, and Facebook.</p></div>
+                        </div>
+                        <div class="project-slide" aria-hidden="true" hidden>
+                            <img src="Assets/photo-product.webp" alt="Product photography project" loading="lazy">
+                            <div class="project-caption"><span>04 · PHOTOGRAPHY</span><h4>Photo & Event Work</h4><p>Product, wedding, and event photography documentation.</p></div>
+                        </div>
+                        <div class="project-slideshow-controls">
+                            <button type="button" class="project-control" data-project-prev aria-label="Previous project">‹</button>
+                            <div class="project-dots" aria-label="Choose a project">
+                                <button type="button" class="project-dot is-active" data-project-dot="0" aria-label="Show project 1" aria-current="true"></button>
+                                <button type="button" class="project-dot" data-project-dot="1" aria-label="Show project 2"></button>
+                                <button type="button" class="project-dot" data-project-dot="2" aria-label="Show project 3"></button>
+                                <button type="button" class="project-dot" data-project-dot="3" aria-label="Show project 4"></button>
+                            </div>
+                            <button type="button" class="project-control" data-project-pause aria-label="Pause slideshow">Ⅱ</button>
+                            <button type="button" class="project-control" data-project-next aria-label="Next project">›</button>
+                        </div>
                     </div>
                 </div>
 
