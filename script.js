@@ -73,3 +73,74 @@
         }
     });
 })();
+
+
+(() => {
+    const slideshow = document.getElementById("project-slideshow");
+    if (!slideshow) return;
+
+    const slides = Array.from(slideshow.querySelectorAll(".project-slide"));
+    const dots = Array.from(slideshow.querySelectorAll("[data-project-dot]"));
+    const previous = slideshow.querySelector("[data-project-prev]");
+    const next = slideshow.querySelector("[data-project-next]");
+    const pauseButton = slideshow.querySelector("[data-project-pause]");
+    if (slides.length < 2 || !previous || !next || !pauseButton) return;
+
+    let activeIndex = 0;
+    let timer = null;
+    let paused = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const stopTimer = () => {
+        if (timer !== null) window.clearInterval(timer);
+        timer = null;
+    };
+
+    const startTimer = () => {
+        stopTimer();
+        if (!paused && !document.hidden) {
+            timer = window.setInterval(() => showSlide(activeIndex + 1), 5000);
+        }
+    };
+
+    const showSlide = (index) => {
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+            const active = slideIndex === activeIndex;
+            slide.hidden = !active;
+            slide.classList.toggle("is-active", active);
+            slide.setAttribute("aria-hidden", String(!active));
+        });
+        dots.forEach((dot, dotIndex) => {
+            const active = dotIndex === activeIndex;
+            dot.classList.toggle("is-active", active);
+            if (active) dot.setAttribute("aria-current", "true");
+            else dot.removeAttribute("aria-current");
+        });
+    };
+
+    const setPaused = (value) => {
+        paused = value;
+        pauseButton.textContent = paused ? "▶" : "Ⅱ";
+        pauseButton.setAttribute("aria-label", paused ? "Play slideshow" : "Pause slideshow");
+        if (paused) stopTimer();
+        else startTimer();
+    };
+
+    previous.addEventListener("click", () => { showSlide(activeIndex - 1); startTimer(); });
+    next.addEventListener("click", () => { showSlide(activeIndex + 1); startTimer(); });
+    dots.forEach((dot) => dot.addEventListener("click", () => {
+        showSlide(Number(dot.dataset.projectDot));
+        startTimer();
+    }));
+    pauseButton.addEventListener("click", () => setPaused(!paused));
+    slideshow.addEventListener("mouseenter", stopTimer);
+    slideshow.addEventListener("mouseleave", startTimer);
+    slideshow.addEventListener("focusin", stopTimer);
+    slideshow.addEventListener("focusout", (event) => {
+        if (!slideshow.contains(event.relatedTarget)) startTimer();
+    });
+    document.addEventListener("visibilitychange", () => document.hidden ? stopTimer() : startTimer());
+
+    showSlide(0);
+    setPaused(paused);
+})();
