@@ -47,5 +47,5 @@
   };
   select.addEventListener("change",()=>{lang=select.value;localStorage.setItem("site-language",lang);apply();});
   apply();
-  const status=document.getElementById("form-status");if(status)new MutationObserver(()=>{const raw=status.textContent.trim();if(lang==="id"){const match=Object.entries(words).find(([en])=>en===raw);if(match)status.textContent=match[1];}else{const match=Object.entries(words).find(([,id])=>id===raw);if(match)status.textContent=match[0];}}).observe(status,{childList:true,characterData:true,subtree:true});
+  const status=document.getElementById("form-status");if(status)new MutationObserver(()=>{const raw=status.textContent.trim();if(lang==="id"){const match=Object.entries(words).find(([en])=>en===raw);if(match&&match[1]!==raw)status.textContent=match[1];}else{const match=Object.entries(words).find(([,id])=>id===raw);if(match)status.textContent=match[0];}}).observe(status,{childList:true,characterData:true,subtree:true});
 })();
